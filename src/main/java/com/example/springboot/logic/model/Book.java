@@ -1,4 +1,4 @@
-package com.example.springboot.model;
+package com.example.springboot.logic.model;
 
 import java.io.Serializable;
 
