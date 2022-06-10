@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  version: "1.0"
+  title: Dávid's Library to learn spring boot
+  description: Lorem ipsum...
+servers:
+- url: http://localhost:8080
+paths:
+  /books:
+    get:
+      tags:
+      - book-controller
+      operationId: getBooks
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+  /books/{id}:
+    get:
+      tags:
+      - book-controller
+      operationId: getBook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Book'
+  /books/ratingsAbove/{rating}:
+    get:
+      tags:
+      - book-controller
+      operationId: topRatedBooks
+      parameters:
+      - name: rating
+        in: path
+        required: true
+        schema:
+          type: number
+          format: double
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+  /books/createRandom:
+    get:
+      tags:
+      - book-controller
+      operationId: createRandomBook
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Book'
+components:
+  schemas:
+    Author:
+      type: object
+      properties:
+        name:
+          type: string
+    Book:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        authors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Author'
+        ratings:
+          type: array
+          items:
+            type: integer
+            format: int32

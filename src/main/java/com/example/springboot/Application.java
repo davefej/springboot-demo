@@ -1,12 +1,13 @@
 package com.example.springboot;
 
-import java.util.Arrays;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import com.example.springboot.features.author.AuthorRepository;
+import com.example.springboot.features.book.BookRepository;
 
 @SpringBootApplication
 public class Application {
@@ -16,14 +17,9 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+	public CommandLineRunner commandLineRunner(ApplicationContext ctx, BookRepository bookRepo,AuthorRepository authorRepo) {
 		return args -> {
-			System.out.println("Let's inspect Beans");
-			String[] beanNames = ctx.getBeanDefinitionNames();
-			Arrays.sort(beanNames);
-			for(String beanName : beanNames){
-				System.out.println(beanName);
-			}
+			System.out.println("Libary is UP");
 		};
 	}
 
