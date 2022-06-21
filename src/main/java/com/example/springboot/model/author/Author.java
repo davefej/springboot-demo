@@ -1,4 +1,4 @@
-package com.example.springboot.features.author;
+package com.example.springboot.model.author;
 
 import jakarta.persistence.Entity;
 import lombok.Getter;

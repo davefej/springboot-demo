@@ -20,6 +20,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Book'
+              example:
+                [{"id":1,"name":"PÉLDA KÖNYV","authors":[],"ratings":[5]}]
   /books/{id}:
     get:
       tags:

@@ -1,4 +1,4 @@
-package com.example.springboot.features.book;
+package com.example.springboot.model.book;
 
 import java.util.List;
 

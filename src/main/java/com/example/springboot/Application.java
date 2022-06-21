@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import com.example.springboot.features.author.AuthorRepository;
-import com.example.springboot.features.book.BookRepository;
+import com.example.springboot.model.author.AuthorRepository;
+import com.example.springboot.model.book.BookRepository;
 
 @SpringBootApplication
 public class Application {

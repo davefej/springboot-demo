@@ -7,10 +7,10 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.springboot.features.author.Author;
-import com.example.springboot.features.author.AuthorRepository;
-import com.example.springboot.features.book.Book;
-import com.example.springboot.features.book.BookRepository;
+import com.example.springboot.model.author.Author;
+import com.example.springboot.model.author.AuthorRepository;
+import com.example.springboot.model.book.Book;
+import com.example.springboot.model.book.BookRepository;
 
 @Service
 public class Library {
@@ -47,6 +47,9 @@ public class Library {
         bookRepository.save(b);       
         return b;
     }
+
+
+
 
     
 }

@@ -1,10 +1,10 @@
-package com.example.springboot.features.book;
+package com.example.springboot.model.book;
 
 import java.util.List;
 
 import org.hibernate.annotations.NamedQuery;
 
-import com.example.springboot.features.author.Author;
+import com.example.springboot.model.author.Author;
 
 import jakarta.persistence.*;
 import lombok.Getter;
